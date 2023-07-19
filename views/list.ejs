@@ -1,0 +1,32 @@
+ <%- include("header") -%>
+<html>
+  <body>
+    <div class="main">
+      <h1>To-Do List</h1>
+      <h1><%= KindOfDay %></h1>
+      <h2>It is a <%= typeOfList %>!</h2>
+      <div class="box">
+        <div class="item">
+          <ul>
+            <% for (let i=0; i < list.length; i++) { %>
+            <input type="checkbox" />
+            <span> <%= list[i] %> </span>
+            <br />
+
+            <% } %>
+          </ul>
+        </div>
+      </div>
+      <form action="/" method="post">
+        <input
+          type="text"
+          name="newItem"
+          placeholder="Enter Your task"
+          autocomplete="off"
+        />
+        <button type="submit" name="list" value=<% typeOfList %>> Add</button>
+      </form>
+    </div>
+  </body>
+  <%- include("footer") %>
+</html>
